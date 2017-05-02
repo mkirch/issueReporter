@@ -1,0 +1,70 @@
+---
+date: "`r Sys.Date()`"
+output:
+  tint::tintPdf:
+    latex_engine: pdflatex
+params:
+   issue_number: 3
+   github_username: githubusername
+   github_token: githubtoken
+   github_url: githuburl
+   github_repo: githubrepo
+   userNames: c(username)
+   fullNames: c(fullname)
+   set_title: settitle
+   set_author: setauthor
+   include_issue: includeissue
+title: "`r params$set_title`"
+author: "`r params$set_author`"
+---
+
+```{r setup, include=FALSE}
+# Invalidate cache when the package version changes
+knitr::opts_chunk$set(tidy = FALSE, cache.extra = packageVersion('tint'))
+httr::set_config( httr::config( ssl_verifypeer = 0L ) ) 
+options(htmltools.dir.version = FALSE)
+```
+
+
+```{r echo=FALSE,cache=FALSE}
+issueBody <- httr::content(httr::GET(paste0(params$github_url,"repos/",
+                                            params$github_repo,"/issues/",
+                                            params$issue_number),
+                                     httr::authenticate(params$github_username, 
+                                                        params$github_token, 
+                                                        type = "basic")))
+issueComments <- httr::content(httr::GET(paste0(params$github_url,"repos/",
+                                                params$github_repo,"/issues/",
+                                                params$issue_number,"/comments"),
+                                         httr::authenticate(params$github_username,
+                                                            params$github_token,
+                                                            type = "basic")))
+users <- c()
+nicks <- c()
+notes <- c()
+for (i in seq_along(issueComments)){
+  usr <- httr::content(httr::GET(paste0(params$github_url,"users/",
+                                        issueComments[[i]]$user$login),
+                                 httr::authenticate(params$github_username,
+                                                    params$github_token,
+                                                    type = "basic")))
+  users[i] <- issueComments[[i]]$user$login
+  nicks[i] <- usr$name
+  notes[i] <- issueComments[[i]]$body
+}
+```
+
+
+```{r, results='asis',echo=FALSE}
+cat("#",issueBody$title,"\n\n") # Note: markdown requires two \n
+# Sometimes we may not need the initial issue text
+if(params$include_issue){
+  cat(issueBody$body,"\n\n")
+}
+for (i in seq_along(issueComments)){
+  cat("# ",nicks[i]," (",users[i],") \n\n")
+  cat(notes[i],"\n\n")
+}
+```
+
+
