@@ -25,7 +25,7 @@
 issueReport <- function(issueNumber = 1, outputFile = NULL, outputDir = NULL,
                         githubUsername = "caesar",
                         githubToken = "abcdefghijklmnopqrstuvwxyz12345",
-                        githubUrl = "https://api.github.com",
+                        githubUrl = "https://api.github.com/",
                         githubRepo = "author/Repo", setTitle = "Issue Notes",
                         setAuthor = "Julius Caesar", includeIssue = TRUE){
     rmarkdown::render("R/report.Rmd",
