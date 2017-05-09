@@ -1,6 +1,6 @@
 Package: issueReporter
 Type: Package
-Title: Create reports from GitHub issues
+Title: Create Reports from GitHub Issues
 Version: 0.1.0
 Author: Michael Kirchner
 Maintainer: Michael Kirchner <michael@kirchner.io>
