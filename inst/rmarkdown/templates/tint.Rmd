@@ -1,0 +1,25 @@
+---
+date: "`r Sys.Date()`"
+output:
+  tint::tintPdf:
+    latex_engine: pdflatex
+params:
+   mdString: mdString
+   setTitle: settitle
+   setAuthor: setauthor
+title: "`r params$setTitle`"
+author: "`r params$setAuthor`"
+---
+
+```{r setup, include=FALSE}
+# Invalidate cache when the package version changes
+knitr::opts_chunk$set(tidy = FALSE, cache.extra = packageVersion('tint'))
+options(htmltools.dir.version = FALSE)
+```
+
+
+```{r, results='asis',echo=FALSE}
+cat(params$mdString)
+```
+
+

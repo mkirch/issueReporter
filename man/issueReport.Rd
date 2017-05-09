@@ -5,11 +5,12 @@
 \title{Generate a PDF report from a GitHub issue thread.}
 \usage{
 issueReport(issueNumber = 1, outputFile = NULL, outputDir = NULL,
-  githubUsername = "caesar",
-  githubToken = "abcdefghijklmnopqrstuvwxyz12345",
-  githubUrl = "https://api.github.com", githubRepo = "author/Repo",
-  setTitle = "Issue Notes", setAuthor = "Julius Caesar",
-  includeIssue = TRUE)
+  githubUsername = "xxxxxxxxxxxxxxxxxxxx",
+  githubToken = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  githubUrl = "https://api.github.com/",
+  githubRepo = "mkirch/issueReporter", setTitle = "Issue Notes",
+  setAuthor = "Julius Caesar", includeTitle = TRUE, includeBody = TRUE,
+  test = FALSE)
 }
 \arguments{
 \item{issueNumber}{Integer GitHub issue number.}
@@ -35,8 +36,12 @@ make sure to append a \code{`/`}.}
 
 \item{setAuthor}{String containing report author.}
 
-\item{includeIssue}{Bool where TRUE includes the original issue, and FALSE
+\item{includeTitle}{Bool where TRUE includes the title, and FALSE excludes.}
+
+\item{includeBody}{Bool where TRUE includes the original issue, and FALSE
 includes only the issue comments.}
+
+\item{test}{Bool If we are using this in test mode.}
 }
 \description{
 For a given GitHub issue, extracts all issue comments and generates a PDF
