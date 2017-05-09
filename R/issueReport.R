@@ -23,6 +23,9 @@
 #' @param includeBody Bool where TRUE includes the original issue, and FALSE
 #' includes only the issue comments.
 #' @param test Bool If we are using this in test mode.
+#' @import tint
+#' @import httpuv
+#' @import jsonlite
 #' @export
 issueReport <- function(issueNumber = 1,
                         outputFile = NULL,
