@@ -9,11 +9,12 @@ BugReports: https://github.com/mkirch/issueReporter/issues
 Description: Generates a report from a GitHub issue thread, using R Markdown.
 Imports:
     rmarkdown,
+    formatR,
     knitr,
     tint,
     httr,
     jsonlite,
     httpuv
-License: GPL-3 | file LICENSE
+License: GPL-3
 LazyData: TRUE
 RoxygenNote: 6.0.1
