@@ -9,6 +9,7 @@ BugReports: https://github.com/mkirch/issueReporter/issues
 Description: Generates a report from a GitHub issue thread, using R Markdown.
 Imports:
     rmarkdown,
+    knitr,
     tint,
     httr,
     jsonlite,
