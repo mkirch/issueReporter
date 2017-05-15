@@ -14,6 +14,5 @@ Imports:
     jsonlite,
     httpuv
 License: GPL-3 | file LICENSE
-OS_type: unix
 LazyData: TRUE
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

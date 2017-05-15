@@ -29,4 +29,3 @@ Returns a list of \code{list(title,body, c(users), c(nicknames), c(notes))}.
 \description{
 For a given GitHub issue, extracts all issue comments.
 }
-

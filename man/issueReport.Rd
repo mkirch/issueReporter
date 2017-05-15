@@ -48,4 +48,3 @@ For a given GitHub issue, extracts all issue comments and generates a PDF
 report of each user's contributions to the thread. View /inst/examples/
 to see a quick sample and output besides the usage below.
 }
-

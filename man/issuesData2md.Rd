@@ -23,4 +23,3 @@ Returns a character vector containing the markdown formatted text.
 After being passed GitHub Issues data for a given thread, extracts and
 formats the material in Markdown.
 }
-
