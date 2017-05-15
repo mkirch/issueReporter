@@ -1,4 +1,4 @@
-## issueReporter
+## issueReporter    [![Build Status](https://travis-ci.org/mkirch/issueReporter.png)](https://travis-ci.org/mkirch/issueReporter) [![CRAN](http://www.r-pkg.org/badges/version/issueReporter)](https://cran.r-project.org/package=issueReporter)
 Create reports from GitHub Issues threads in R.
 
 ### Background and Motivation
