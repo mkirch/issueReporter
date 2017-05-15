@@ -7,7 +7,13 @@ Sometimes you've got Issues. There is occasionally a need to create a quality do
 
 ### Getting Started
 
-You must first create a Personal Access Token in your GitHub or GitHub Enterprise account settings. Instructions to do so can be found [here](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/).
+`issueReporter` is now [on CRAN](https://cran.r-project.org/web/packages/issueReporter/index.html)! To install the R package, simply:
+
+```r
+R> install.packages("issueReporter")
+```
+
+In order to use the main function `issueReport()`, you must first create a Personal Access Token in your GitHub or GitHub Enterprise account settings. Instructions to do so can be found [here](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/).
 
 Documents are well styled thanks to Dirk Eddelbuettel's [tint](http://dirk.eddelbuettel.com/code/tint.html) package. Note that all of the requirements for tint must be fulfilled. Future themes/styles will come in the future, as well as support for HTML output.
 
