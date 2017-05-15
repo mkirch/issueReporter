@@ -1,2 +1,3 @@
 language: r
 cache: packages
+pandoc: 1.16
