@@ -1,3 +1,5 @@
 language: r
 cache: packages
-pandoc: 1.16
+pandoc_version: 1.16
+before_install:
+  - tlmgr install index
