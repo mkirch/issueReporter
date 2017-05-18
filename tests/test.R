@@ -6,11 +6,11 @@ setwd(tempdir())
 testMD <- issuesData2md()
 
 # Use default data to generate PDF
-issuesGenPDF(style = "tint",
-             RmdLocation =  system.file("rmarkdown/templates/", "tint.Rmd",
-                                        package = "issueReporter"),
-             outputFile = tempfile(pattern="ir", fileext=".pdf"),
-             outputDir = tempdir(),
-             md = testMD,
-             setTitle = "Example Notes",
-             setAuthor = "Author Name")
+# issuesGenPDF(style = "tint",
+#              RmdLocation =  system.file("rmarkdown/templates/", "tint.Rmd",
+#                                         package = "issueReporter"),
+#              outputFile = tempfile(pattern="ir", fileext=".pdf"),
+#              outputDir = tempdir(),
+#              md = testMD,
+#              setTitle = "Example Notes",
+#              setAuthor = "Author Name")
